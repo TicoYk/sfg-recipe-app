@@ -17,7 +17,8 @@ public class Category {
     private String name;
     private String description;
 
-    @ManyToMany
+    // mappedBy is where you specify the Attribute Name!
+    @ManyToMany(mappedBy = "categories")
     private Set<Recipe> recipes;
 
     public Long getId() {
