@@ -1,4 +1,4 @@
-package guru.springframework.domain;
+package com.ticoyk.sfgrecipeapp.domain;
 
 import java.math.BigDecimal;
 
