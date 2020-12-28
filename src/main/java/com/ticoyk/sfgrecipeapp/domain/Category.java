@@ -12,9 +12,8 @@ import javax.persistence.ManyToMany;
 public class Category {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
     private String description;
 
     // mappedBy is where you specify the Attribute Name!
@@ -28,15 +27,7 @@ public class Category {
     public void setId(Long id) {
         this.id = id;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    
     public String getDescription() {
         return description;
     }
