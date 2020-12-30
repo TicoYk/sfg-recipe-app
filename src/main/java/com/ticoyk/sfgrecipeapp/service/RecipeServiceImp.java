@@ -9,6 +9,8 @@ import com.ticoyk.sfgrecipeapp.repository.RecipeRepository;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
+import lombok.extern.slf4j.Slf4j;
+@Slf4j
 @Service
 @Primary
 public class RecipeServiceImp implements RecipeService {
@@ -21,6 +23,8 @@ public class RecipeServiceImp implements RecipeService {
 
     @Override
     public Set<Recipe> getRecipes() {
+        log.debug("I m in the service");
+
         Set<Recipe> recipeSet = new HashSet<>();
         recipeRepository.findAll().iterator().forEachRemaining(recipeSet::add);
 
