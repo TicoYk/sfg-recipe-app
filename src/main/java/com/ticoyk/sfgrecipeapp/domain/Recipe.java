@@ -1,5 +1,6 @@
 package com.ticoyk.sfgrecipeapp.domain;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -35,7 +36,7 @@ public class Recipe {
     private Difficulty difficulty;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
-    private Set<Ingredient> ingredients;
+    private Set<Ingredient> ingredients = new HashSet<>();
 
     @Lob
     private Byte[] image;
@@ -48,8 +49,26 @@ public class Recipe {
         name = "recipe_category",
         joinColumns = @JoinColumn(name = "recipe_id"),
         inverseJoinColumns = @JoinColumn(name = "category_id"))
-    private Set<Category> categories;
+    private Set<Category> categories = new HashSet<>();
     
+    public Recipe(){}
+    public Recipe(String description, Integer pretTime, Integer cookTime, Integer servings, String sources, String url,
+            String directions, Difficulty difficulty, Set<Ingredient> ingredients, Byte[] image, Notes notes,
+            Set<Category> categories) {
+        this.description = description;
+        this.pretTime = pretTime;
+        this.cookTime = cookTime;
+        this.servings = servings;
+        this.sources = sources;
+        this.url = url;
+        this.directions = directions;
+        this.difficulty = difficulty;
+        this.ingredients = ingredients;
+        this.image = image;
+        this.notes = notes;
+        this.categories = categories;
+    }
+
     public Long getId() {
         return id;
     }
@@ -126,10 +145,6 @@ public class Recipe {
         return notes;
     }
 
-    public void setNote(Notes note) {
-        this.notes = note;
-    }
-
     public void setNotes(Notes notes) {
         this.notes = notes;
     }
@@ -157,6 +172,5 @@ public class Recipe {
     public void setCategories(Set<Category> categories) {
         this.categories = categories;
     }
-
     
 }

@@ -1,5 +1,6 @@
 package com.ticoyk.sfgrecipeapp.domain;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -18,7 +19,13 @@ public class Category {
 
     // mappedBy is where you specify the Attribute Name!
     @ManyToMany(mappedBy = "categories")
-    private Set<Recipe> recipes;
+    private Set<Recipe> recipes = new HashSet<>();
+
+    public Category(){}
+    public Category(String description, Set<Recipe> recipes) {
+        this.description = description;
+        this.recipes = recipes;
+    }
 
     public Long getId() {
         return id;
@@ -43,6 +50,5 @@ public class Category {
     public void setRecipes(Set<Recipe> recipes) {
         this.recipes = recipes;
     }
-
     
 }
