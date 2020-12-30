@@ -74,9 +74,9 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 
         recipe1.setNotes(new Notes(recipe1, "Don't let it burn"));
 
-        recipe1.getIngredients().add(new Ingredient("Farinha", new BigDecimal(10) , recipe1 , uomOunce.get()));
-        recipe1.getIngredients().add(new Ingredient("Molho de Tomate", new BigDecimal(10) , recipe1 , uomPinch.get()));
-        recipe1.getIngredients().add(new Ingredient("Amor", new BigDecimal(100) , recipe1 , uomOunce.get()));
+        recipe1.addIngredient(new Ingredient("Farinha", new BigDecimal(10) , uomOunce.get()));
+        recipe1.addIngredient(new Ingredient("Molho de Tomate", new BigDecimal(10) , uomPinch.get()));
+        recipe1.addIngredient(new Ingredient("Amor", new BigDecimal(100) , uomOunce.get()));
 
         recipes.add(recipe1);
 
@@ -90,9 +90,9 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 
         recipe2.setNotes(new Notes(recipe2, "Don't let it burn again"));
 
-        recipe2.getIngredients().add(new Ingredient("Farinha 2", new BigDecimal(10) , recipe2 , uomOunce.get()));
-        recipe2.getIngredients().add(new Ingredient("Molho de Tomate 2", new BigDecimal(10) , recipe1 , uomPinch.get()));
-        recipe2.getIngredients().add(new Ingredient("Amor 2", new BigDecimal(100) , recipe2 , uomOunce.get()));
+        recipe2.addIngredient(new Ingredient("Farinha 2", new BigDecimal(10) , uomOunce.get()));
+        recipe2.addIngredient(new Ingredient("Molho de Tomate 2", new BigDecimal(10) , uomPinch.get()));
+        recipe2.addIngredient(new Ingredient("Amor 2", new BigDecimal(100) , uomOunce.get()));
 
         recipes.add(recipe2);
 

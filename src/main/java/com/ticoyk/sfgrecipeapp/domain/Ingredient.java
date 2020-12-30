@@ -34,6 +34,12 @@ public class Ingredient {
         UnitOfMeasure = unitOfMeasure;
     }
 
+    public Ingredient(String description, BigDecimal amount, UnitOfMeasure unitOfMeasure) {
+        this.description = description;
+        this.amount = amount;
+        UnitOfMeasure = unitOfMeasure;
+    }
+
     public Long getId() {
         return id;
     }
