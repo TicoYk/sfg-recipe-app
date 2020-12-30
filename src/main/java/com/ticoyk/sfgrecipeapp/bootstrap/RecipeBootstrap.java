@@ -62,7 +62,6 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
             throw new RuntimeException("Expected Ounce Not Found");
         }
 
-
         Recipe recipe1 = new Recipe();
         recipe1.setDescription("Not a Pizza");
         recipe1.setPretTime(30);
@@ -72,7 +71,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         recipe1.getCategories().add(categoryA.get());
         recipe1.getCategories().add(categoryI.get());
 
-        recipe1.setNotes(new Notes(recipe1, "Don't let it burn"));
+        recipe1.addNotes(new Notes("Don't let it burn"));
 
         recipe1.addIngredient(new Ingredient("Farinha", new BigDecimal(10) , uomOunce.get()));
         recipe1.addIngredient(new Ingredient("Molho de Tomate", new BigDecimal(10) , uomPinch.get()));
@@ -88,7 +87,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         
         recipe2.getCategories().add(categoryA.get());
 
-        recipe2.setNotes(new Notes(recipe2, "Don't let it burn again"));
+        recipe2.addNotes(new Notes("Don't let it burn again"));
 
         recipe2.addIngredient(new Ingredient("Farinha 2", new BigDecimal(10) , uomOunce.get()));
         recipe2.addIngredient(new Ingredient("Molho de Tomate 2", new BigDecimal(10) , uomPinch.get()));

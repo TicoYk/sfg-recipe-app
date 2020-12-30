@@ -75,6 +75,12 @@ public class Recipe {
         return this;
     }
 
+    public Recipe addNotes(Notes notes){
+        notes.setRecipe(this);
+        this.setNotes(notes);
+        return this;
+    }
+
     public Long getId() {
         return id;
     }
